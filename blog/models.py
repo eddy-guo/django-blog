@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class Post(models.Model):
+    # removes warning in views.py
+    objects = models.Manager()
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
